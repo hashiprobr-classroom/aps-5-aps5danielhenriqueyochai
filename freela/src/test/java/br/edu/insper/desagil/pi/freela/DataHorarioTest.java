@@ -17,9 +17,24 @@ public class DataHorarioTest {
 
     @Test
     void constroi() {
-        assertEquals(1,data.getDia());
-        assertEquals(1,data.getMes());
-        assertEquals(1970,data.getAno());
-        assertEquals(0,data.minutos());
+        assertEquals(0,dataHorario.getHora());
+        assertEquals(0,dataHorario.getMinuto());
+        assertEquals(0,dataHorario.minutos());
+    }
+
+    @Test
+    void horarioBaixo() {
+        dataHorario.atualiza(-1,-1);
+        assertEquals(0,dataHorario.getHora());
+        assertEquals(0,dataHorario.getMinuto());
+        assertEquals(0,dataHorario.minutos());
+    }
+
+    @Test
+    void horarioAlto() {
+        dataHorario.atualiza(24,60);
+        assertEquals(23,dataHorario.getHora());
+        assertEquals(59,dataHorario.getMinuto());
+        assertEquals(1439,dataHorario.minutos());
     }
 }

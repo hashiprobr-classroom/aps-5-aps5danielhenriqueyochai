@@ -42,8 +42,8 @@ public class Data extends Momento{
 
     public void atualiza(int novoAno, int novoMes, int novoDia) {
         ano = ajusta(novoAno,1970,2070);
-        mes = ajusta(novoAno,1,12);
-        dia = ajusta(novoAno,1,limite.get(mes));
+        mes = ajusta(novoMes,1,12);
+        dia = ajusta(novoDia,1,limite.get(mes));
     }
 
     @Override
