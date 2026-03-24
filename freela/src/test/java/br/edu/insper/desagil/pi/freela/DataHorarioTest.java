@@ -6,11 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataHorarioTest {
-    private  DataHorario data;
+    private  DataHorario dataHorario;
+    private Data data;
 
     @BeforeEach
     void setUp() {
-        data = new DataHorario();
+        data = new Data();
+        dataHorario = new DataHorario(data);
     }
 
     @Test
@@ -19,5 +21,5 @@ public class DataHorarioTest {
         assertEquals(1,data.getMes());
         assertEquals(1970,data.getAno());
         assertEquals(0,data.minutos());
-
+    }
 }
