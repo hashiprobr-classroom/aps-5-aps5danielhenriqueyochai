@@ -13,15 +13,9 @@ public class Filtro {
 
             int[][] entrada = imagem.getPixels();
 
+            valida(entrada);
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
-
             int largura = entrada[0].length;
-            if (largura < 3) {
-                throw new IllegalStateException("largura pequena");
-            }
 
             int[][] saida = new int[altura - 2][largura - 2];
 
@@ -58,15 +52,9 @@ public class Filtro {
 
             int[][] entrada = imagem.getPixels();
 
+            valida(entrada);
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
-
             int largura = entrada[0].length;
-            if (largura < 3) {
-                throw new IllegalStateException("largura pequena");
-            }
 
             int[][] saida = new int[altura - 2][largura - 2];
 
@@ -103,15 +91,9 @@ public class Filtro {
 
             int[][] entrada = imagem.getPixels();
 
+            valida(entrada);
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
-
             int largura = entrada[0].length;
-            if (largura < 3) {
-                throw new IllegalStateException("largura pequena");
-            }
 
             int[][] saida = new int[altura - 2][largura - 2];
 
@@ -148,15 +130,9 @@ public class Filtro {
 
             int[][] entrada = imagem.getPixels();
 
+            valida(entrada);
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
-
             int largura = entrada[0].length;
-            if (largura < 3) {
-                throw new IllegalStateException("largura pequena");
-            }
 
             int[][] saida = new int[altura - 2][largura - 2];
 
@@ -190,6 +166,14 @@ public class Filtro {
             return new Imagem(saida);
         } else {
             throw new IllegalStateException("tipo inválido");
+        }
+    }
+    private void valida(int[][] entrada) {
+        if (entrada.length < 3) {
+            throw new IllegalStateException("altura pequena");
+        }
+        if (entrada[0].length < 3) {
+            throw new IllegalStateException("largura pequena");
         }
     }
 }
